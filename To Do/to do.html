@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task | Modern Todo App</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-content">
+                <h1>Smart Task</h1>
+                <p id="date-display">Loading date...</p>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-group">
+            <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+            <button id="add-btn" class="add-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <ul id="task-list" class="task-list">
+            <!-- Tasks will be injected here via JS -->
+        </ul>
+        
+        <!-- Empty State (Hidden by default) -->
+        <div id="empty-state" class="empty-state hidden">
+            <i class="fas fa-clipboard-check"></i>
+            <p>No tasks found. Enjoy your day!</p>
+        </div>
+    </div>
+
+    <!-- Edit Modal (Hidden by default) -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" id="edit-input" placeholder="Update task...">
+            <div class="modal-actions">
+                <button id="save-edit-btn" class="save-btn">Save</button>
+                <button id="cancel-edit-btn" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Link -->
+    <script src="script.js"></script>
+</body>
+</html>
